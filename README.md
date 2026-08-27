@@ -63,10 +63,10 @@ parameter estimation.
 
 | case | mojo-statsforecast | statsforecast | result |
 | --- | ---: | ---: | ---: |
-| AutoETS ANN forecast (50k) | 8.67 ms | 112.93 ms | 13.02x faster |
-| AutoETS AAA forecast (20k, m=12) | 284.15 ms | 6458.56 ms | 22.73x faster |
-| ARIMA(2,0,1) forecast (5k) | 37.05 ms | 313.82 ms | 8.47x faster |
-| Theta forecast (5k) | 1.33 ms | 935.01 ms | 701.55x faster |
+| AutoETS ANN forecast (50k) | 7.88 ms | 109.70 ms | 13.92x faster |
+| AutoETS AAA forecast (20k, m=12) | 273.45 ms | 5292.45 ms | 19.35x faster |
+| ARIMA(2,0,1) forecast (5k) | 23.31 ms | 227.74 ms | 9.77x faster |
+| Theta forecast (5k) | 1.29 ms | 926.66 ms | 716.43x faster |
 
 These results are for the covered algorithms and sizes, not a claim about the
 many upstream models this repository does not implement. The benchmark source,
