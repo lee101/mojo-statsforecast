@@ -24,7 +24,7 @@ def ets_filter(
         var sse = 0.0
         var vector_end = n - n % W
         for t in range(0, vector_end, W):
-            var values = y.load[width=W](t)
+            var values = y.unsafe_load[width=W](t)
             var predictions = values
             comptime for lane in range(W):
                 predictions[lane] = level
@@ -67,7 +67,7 @@ def ets_sse_ann(y: Ptr, n: Int, initial_level: Float64, alpha: Float64) -> Float
     var sse = 0.0
     var vector_end = n - n % W
     for t in range(0, vector_end, W):
-        var values = y.load[width=W](t)
+        var values = y.unsafe_load[width=W](t)
         var predictions = values
         comptime for lane in range(W):
             predictions[lane] = level
@@ -94,7 +94,7 @@ def ets_sse_grad_ann(
     var decay = 1.0 - alpha
     var vector_end = n - n % W
     for t in range(0, vector_end, W):
-        var values = y.load[width=W](t)
+        var values = y.unsafe_load[width=W](t)
         var errors = values
         var alpha_derivatives = values
         var initial_derivatives = values
